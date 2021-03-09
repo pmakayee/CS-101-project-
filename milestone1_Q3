@@ -1,0 +1,17 @@
+#finding the complement string of a given DNA string
+def reverse_complement(dna):
+    #reverse dna string
+    dna_reverse = dna[::-1]
+    dna_complement = ''
+    #each letter in the reverse string is replaced with complement letter
+    #all is added to a new string (dna_complement)
+    for symbol in dna_reverse:
+        if symbol == 'A':
+            dna_complement += 'T'
+        elif symbol == 'T':
+            dna_complement += 'A'
+        elif symbol == 'C':
+            dna_complement += 'G'
+        else:
+            dna_complement += 'C'
+    return dna_complement
