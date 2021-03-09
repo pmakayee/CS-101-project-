@@ -1,0 +1,18 @@
+#Possible number of RNA sequences from protein string
+#function counts the number of keys that have the same value
+def amino_frequencies():
+    frequencies= {}
+    for a in genetic_code.values(): #takes each value in genetic_code dict as key
+        if a in frequencies:
+            frequencies[a]+= 1
+        else: 
+            frequencies[a]=1
+    return frequencies #returns number of multiplicities of each key (amino acid)
+
+def source_rna(protein):
+    split_protein= list(protein) #separate protein into individual letters
+    frequencies= amino_frequencies()
+    n= frequencies[''] #starts with the number of stop codons since it is not icluded in amino string
+    for i in range(0,len(split_protein)):
+        n= n*frequencies[split_protein[i]] #each value corresponding to its key is multiplied together
+    return n
