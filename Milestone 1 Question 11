@@ -12,7 +12,7 @@ def amino_frequencies():
 def source_rna(protein):
     split_protein= list(protein) #separate protein into individual letters
     frequencies= amino_frequencies()
-    n= frequencies[''] #starts with the number of stop codons since it is not icluded in amino string
+    n= frequencies[''] #starts with the number of stop codons since it is not included in amino string
     for i in range(0,len(split_protein)):
         n= n*frequencies[split_protein[i]] #each value corresponding to its key is multiplied together
     return n
